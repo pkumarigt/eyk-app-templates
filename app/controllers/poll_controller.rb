@@ -51,7 +51,7 @@ class PollController < ApplicationController
 
     def do_extra_work 
         puts "Begin do extra work"
-        (1..1000).each do |n|
+        (1..100).each do |n|
             if is_prime(n)
                 puts "#{n} is a prime number"
             end 
