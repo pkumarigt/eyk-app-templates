@@ -1,7 +1,7 @@
 require 'poll'
 
 Poll.create(id: 1,
-            name: 'What is your favorite weekend activity?',
+            name: 'What is your favorite WEEKDAY activity?',
             choice_one: 'Netflix',
             choice_two: 'Gaming',
             choice_three: 'Dining',
