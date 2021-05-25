@@ -31,7 +31,7 @@ ARG db_yml_host
 
 # Uncomment this line if you want EYK to generate your Postgres
 # database yaml config file
-RUN erb -T - ./.eyk/config/database.yml.erb > config/database.yml
+# RUN erb -T - ./.eyk/config/database.yml.erb > config/database.yml
 
 RUN erb -T - ./.eyk/config/sidekiq.yml.erb > config/sidekiq.yml
 

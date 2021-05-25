@@ -1,0 +1,7 @@
+#!/bin/bash
+export RAILS_MASTER_KEY=804488f2ddea2d81dfeaec2c472aa1a8
+export DEIS_DOCKER_BUILD_ARGS_ENABLED=1
+export db_yml_username=quizuser
+export db_yml_password=6WYacgMox3JGhqw8ACGYvNW7QPpEtmdNjEUgVTnY
+export db_yml_host=svc-rdb-quizdb20210212160658067600000002.cgopnfbjx9hn.us-west-2.rds.amazonaws.com
+export db_yml_database=quizdb

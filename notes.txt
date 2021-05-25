@@ -1,0 +1,6 @@
+eyk apps:run 'bundle exec rails db:migrate' -a onside-umbrella
+eyk apps:run 'bundle exec rails db:seed' -a onside-umbrella
+
+eyk limits:set --cpu web=100m/1000m -a onside-umbrella
+
+tail -f --sleep-interval=2 ---disable-inotify my_results2
