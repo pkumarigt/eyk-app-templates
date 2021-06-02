@@ -4,3 +4,18 @@ eyk apps:run 'bundle exec rails db:seed' -a onside-umbrella
 eyk limits:set --cpu web=100m/1000m -a onside-umbrella
 
 tail -f --sleep-interval=2 ---disable-inotify my_results2
+
+
+curl -ssl https://eyk-assets.ey.io/eyk/eyk-installer.sh | bash
+eyk ssologin https://eyk.teams.devpost-ey.ey.io
+eyk keys:add
+
+postgresql-client-11
+git push eyk <branch>
+
+
+#redis config in .eyk/config/redis.yml.erb
+
+default:
+  host: 
+  port: 
