@@ -5,10 +5,16 @@ eyk limits:set --cpu web=100m/1000m -a onside-umbrella
 
 tail -f --sleep-interval=2 ---disable-inotify my_results2
 
+eyk ps:console konimbo-eyk-prod-cmd-7679dccc4f-w4v59 web konimbo-eyk-prod /bin/bash
+eyk ps:console konimbo-eyk-prod-cmd-7679dccc4f-w4v59 web konimbo-eyk-prod /bin/bash --debug=true
+
+
 
 curl -ssl https://eyk-assets.ey.io/eyk/eyk-installer.sh | bash
 eyk ssologin https://eyk.teams.devpost-ey.ey.io
 eyk keys:add
+cat ~/.eyk/client.json
+
 
 postgresql-client-11
 git push eyk <branch>
@@ -19,3 +25,86 @@ git push eyk <branch>
 default:
   host: 
   port: 
+
+
+eyk config:set values -a <appname>
+eyk limits:set --cpu web=100m/1000m
+
+https://github.com/prometheus/client_ruby
+
+
+Puma.rb config
+https://gist.github.com/mushyy/14447dbb30854803ba456007c09d405e
+
+workers Integer(ENV['WEB_CONCURRENCY'] || 2)
+threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
+threads threads_count, threads_count
+
+preload_app!
+
+rackup      DefaultRackup
+port        ENV['PORT']     || 3000
+environment ENV['RACK_ENV'] || 'development'
+
+
+Procfile change
+bundle exec puma -C config/puma.rb
+
+
+
+#4PR deploy call
+eyk apps:init -a itvs-website ruby-2.5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SCALEARC SECTION
+----------------
+
+AAG
+java -jar Java_Client.jar AAG 1433 sa admin@123 Demo 0 2 0 batch /opt/scalearc/lg/mssql/conf/java_client/sp.sql 1 100 RW 6000 0
+
+SCALEARC
+java -jar Java_Client.jar SCALEARC 1433 sa admin@123 Demo 0 2 0 batch /opt/scalearc/lg/mssql/conf/java_client/write.sql 1 100 RW 6000 0
+
+
+SCALEARC (SP READ | CACHING | Load Balacning)
+java -jar Java_Client.jar SCALEARC 1433 sa admin@123 Demo 0 1 0 batch /opt/scalearc/lg/mssql/conf/java_client/sp_read_only.sql 1 100 RW 6000 0
+java -jar Java_Client.jar SCALEARC 1433 sa admin@123 Demo 0 1 0 batch /opt/scalearc/lg/mssql/conf/java_client/sp_read_only_top_level.sql 1 100 RW 6000 0
+java -jar Java_Client.jar SCALEARC 1433 sa admin@123 Demo 0 5 0 batch /opt/scalearc/lg/mssql/conf/java_client/sp_read_only_with_temp_table.sql 1 100 RW 6000 0
+
+
+SCALEARC (SP Write | ZERO DOWN TIME)
+java -jar Java_Client.jar SCALEARC 1433 sa admin@123 Demo 0 2 0 batch /opt/scalearc/lg/mssql/conf/java_client/sp_read_write.sql 1 100 RW 6000 0
+
+
+
+
+
+
