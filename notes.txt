@@ -1,13 +1,13 @@
+EYK SECTION
+----------------
+
+
 eyk apps:run 'bundle exec rails db:migrate' -a onside-umbrella
 eyk apps:run 'bundle exec rails db:seed' -a onside-umbrella
-
 eyk limits:set --cpu web=100m/1000m -a onside-umbrella
-
 tail -f --sleep-interval=2 ---disable-inotify my_results2
-
 eyk ps:console konimbo-eyk-prod-cmd-7679dccc4f-w4v59 web konimbo-eyk-prod /bin/bash
 eyk ps:console konimbo-eyk-prod-cmd-7679dccc4f-w4v59 web konimbo-eyk-prod /bin/bash --debug=true
-
 
 
 curl -ssl https://eyk-assets.ey.io/eyk/eyk-installer.sh | bash
@@ -51,7 +51,6 @@ Procfile change
 bundle exec puma -C config/puma.rb
 
 
-
 #4PR deploy call
 eyk apps:init -a itvs-website ruby-2.5
 
@@ -60,9 +59,11 @@ eyk apps:init -a itvs-website ruby-2.5
 
 
 
-
-
-
+meh cabal
+---------
+meh cabal
+kyb (goto another jumb server that has access to all the clusters)
+kyb shell eyk-central central-staging-qa
 
 
 
@@ -88,23 +89,21 @@ SCALEARC SECTION
 ----------------
 
 AAG
-java -jar Java_Client.jar AAG 1433 sa admin@123 Demo 0 2 0 batch /opt/scalearc/lg/mssql/conf/java_client/sp.sql 1 100 RW 6000 0
+java -jar Java_Client.jar AAG 1433 sa admin@123 AdventureWorks2019 0 5 0 batch /opt/scalearc/lg/mssql/conf/java_client/AdventureWorks2019/sp_read_write.sql 1 100 RW 6000 0
 
 SCALEARC
-java -jar Java_Client.jar SCALEARC 1433 sa admin@123 Demo 0 2 0 batch /opt/scalearc/lg/mssql/conf/java_client/write.sql 1 100 RW 6000 0
-
+java -jar Java_Client.jar SCALEARC 1433 sa admin@123 AdventureWorks2019 0 5 0 batch /opt/scalearc/lg/mssql/conf/java_client/AdventureWorks2019/sp_read_write.sql 1 100 RW 6000 0
 
 SCALEARC (SP READ | CACHING | Load Balacning)
-java -jar Java_Client.jar SCALEARC 1433 sa admin@123 Demo 0 1 0 batch /opt/scalearc/lg/mssql/conf/java_client/sp_read_only.sql 1 100 RW 6000 0
-java -jar Java_Client.jar SCALEARC 1433 sa admin@123 Demo 0 1 0 batch /opt/scalearc/lg/mssql/conf/java_client/sp_read_only_top_level.sql 1 100 RW 6000 0
-java -jar Java_Client.jar SCALEARC 1433 sa admin@123 Demo 0 5 0 batch /opt/scalearc/lg/mssql/conf/java_client/sp_read_only_with_temp_table.sql 1 100 RW 6000 0
-
+java -jar Java_Client.jar SCALEARC 1433 sa admin@123 AdventureWorks2019 0 5 0 batch /opt/scalearc/lg/mssql/conf/java_client/AdventureWorks2019/sp_read_only.sql 1 100 RW 6000 0
+java -jar Java_Client.jar SCALEARC 1433 sa admin@123 AdventureWorks2019 0 5 0 batch /opt/scalearc/lg/mssql/conf/java_client/AdventureWorks2019/sp_read_only_top_level.sql 1 100 RW 6000 0
+java -jar Java_Client.jar SCALEARC 1433 sa admin@123 AdventureWorks2019 0 5 0 batch /opt/scalearc/lg/mssql/conf/java_client/AdventureWorks2019/sp_read_only_with_temp_table.sql 1 100 RW 6000 0
 
 SCALEARC (SP Write | ZERO DOWN TIME)
 java -jar Java_Client.jar SCALEARC 1433 sa admin@123 Demo 0 2 0 batch /opt/scalearc/lg/mssql/conf/java_client/sp_read_write.sql 1 100 RW 6000 0
 
 
-
+  
 
 
 
