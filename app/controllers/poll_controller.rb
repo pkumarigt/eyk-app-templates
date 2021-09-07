@@ -4,11 +4,7 @@ Rollbar.configure do |config|
 #  config.access_token = 'ccc6e79e105e4eccb4a346d00667c0a8'
   config.access_token = ENV["ROLLBAR_ACCESS_TOKEN"]
 
-
-
 end
-
-
 
 class PollController < ApplicationController
     def index
@@ -70,7 +66,7 @@ class PollController < ApplicationController
         end
         puts "Complete do extra work"
 
-        Rollbar.info("Hello world!")
+        Rollbar.info("EYK connecting to Rollbar")
         begin
             x = nil
             x.hello?
