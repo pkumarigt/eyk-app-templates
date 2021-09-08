@@ -46,7 +46,6 @@ rackup      DefaultRackup
 port        ENV['PORT']     || 3000
 environment ENV['RACK_ENV'] || 'development'
 
-
 Procfile change
 bundle exec puma -C config/puma.rb
 
@@ -55,33 +54,14 @@ bundle exec puma -C config/puma.rb
 eyk apps:init -a itvs-website ruby-2.5
 
 
-
-
-
-
 meh cabal
 ---------
 meh cabal
 kyb (goto another jumb server that has access to all the clusters)
 kyb shell eyk-central central-staging-qa
+kyb show account-6616 (shows the clusters associated with accounts)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+kubectl get pods -o wide
 
 
 
@@ -101,6 +81,79 @@ java -jar Java_Client.jar SCALEARC 1433 sa admin@123 AdventureWorks2019 0 5 0 ba
 
 SCALEARC (SP Write | ZERO DOWN TIME)
 java -jar Java_Client.jar SCALEARC 1433 sa admin@123 Demo 0 2 0 batch /opt/scalearc/lg/mssql/conf/java_client/sp_read_write.sql 1 100 RW 6000 0
+
+
+
+Pstgress
+
+
+
+# populate inintial data
+sysbench \
+--db-driver=pgsql \
+--oltp-table-size=100000 \
+--oltp-tables-count=24 \
+--threads=1 \
+--pgsql-host=10.162.1.196 \
+--pgsql-port=5432 \
+--pgsql-user=scalearcadmin \
+--pgsql-password=admin123 \
+--pgsql-db=Demo \
+/usr/share/sysbench/tests/include/oltp_legacy/parallel_prepare.lua \
+run
+
+
+# read only queries
+sysbench \
+--db-driver=pgsql \
+--report-interval=2 \
+--oltp-table-size=100000 \
+--oltp-tables-count=24 \
+--threads=1 \
+--time=3600 \
+--pgsql-host=10.162.1.196 \
+--pgsql-port=5432 \
+--pgsql-user=scalearcadmin \
+--pgsql-password=admin123 \
+--pgsql-db=Demo \
+/usr/share/sysbench/tests/include/oltp_legacy/select.lua \
+run
+
+
+# write only queries
+sysbench \
+--db-driver=pgsql \
+--report-interval=2 \
+--oltp-table-size=100000 \
+--oltp-tables-count=24 \
+--threads=1 \
+--time=3600 \
+--pgsql-host=10.162.1.196 \
+--pgsql-port=5432 \
+--pgsql-user=scalearcadmin \
+--pgsql-password=admin123 \
+--pgsql-db=Demo \
+/usr/share/sysbench/tests/include/oltp_legacy/insert.lua \
+run
+
+
+
+# read write queries (Do not Use)
+sysbench \
+--db-driver=pgsql \
+--report-interval=2 \
+--oltp-table-size=1000 \
+--oltp-tables-count=2 \
+--threads=1 \
+--time=3600 \
+--pgsql-host=10.162.1.196 \
+--pgsql-port=5432 \
+--pgsql-user=scalearcadmin \
+--pgsql-password=admin123 \
+--pgsql-db=Demo \
+/usr/share/sysbench/tests/include/oltp_legacy/oltp.lua \
+run
+
 
 
   
