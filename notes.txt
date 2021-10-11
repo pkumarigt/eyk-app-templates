@@ -64,6 +64,11 @@ kyb show account-6616 (shows the clusters associated with accounts)
 kubectl get pods -o wide
 
 
+#buswhere deployment call
+imgagemagic issue.
+RUN apt-get --allow-releaseinfo-change update && apt-get install -y imagemagick libsqlite3-dev
+
+
 
 SCALEARC SECTION
 ----------------
@@ -103,21 +108,21 @@ sysbench \
 run
 
 
-# read only queries
-sysbench \
---db-driver=pgsql \
---report-interval=2 \
---oltp-table-size=100000 \
---oltp-tables-count=24 \
---threads=1 \
---time=3600 \
---pgsql-host=10.162.1.196 \
---pgsql-port=5432 \
---pgsql-user=scalearcadmin \
---pgsql-password=admin123 \
---pgsql-db=Demo \
-/usr/share/sysbench/tests/include/oltp_legacy/select.lua \
-run
+  # read only queries
+  sysbench \
+  --db-driver=pgsql \
+  --report-interval=2 \
+  --oltp-table-size=100000 \
+  --oltp-tables-count=3 \
+  --threads=1 \
+  --time=3600 \
+  --pgsql-host=10.162.1.196 \
+  --pgsql-port=5432 \
+  --pgsql-user=scalearcadmin \
+  --pgsql-password=admin123 \
+  --pgsql-db=Demo \
+  /usr/share/sysbench/tests/include/oltp_legacy/select.lua \
+  run
 
 
 # write only queries
@@ -125,7 +130,7 @@ sysbench \
 --db-driver=pgsql \
 --report-interval=2 \
 --oltp-table-size=100000 \
---oltp-tables-count=24 \
+--oltp-tables-count=3 \
 --threads=1 \
 --time=3600 \
 --pgsql-host=10.162.1.196 \
