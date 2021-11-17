@@ -57,6 +57,7 @@ class PollController < ApplicationController
         render :json => JSON[response]
     end 
 
+    
     def do_extra_work 
         puts "Begin do extra work"
         (1..1000).each do |n|
