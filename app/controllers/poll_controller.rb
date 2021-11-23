@@ -66,21 +66,20 @@ class PollController < ApplicationController
             end 
         end
         puts "Complete do extra work"
-=begin
-        Rollbar.info("EYK connecting to Rollbar")
-        begin
-            x = nil
-            x.hello?
-          rescue => e
-            Rollbar.error(e)
-          end
-=end
+        
+        #Rollbar.info("EYK connecting to Rollbar")
+        #begin
+        #    x = nil
+        #    x.hello?
+        #  rescue => e
+        #    Rollbar.error(e)
+        #end
+
     end
 
 
     def is_prime(num)
-        (2..(num - 1)).each 
-        do |n|
+        (2..(num - 1)).each do |n|
           return false if num % n == 0
         end
         true
