@@ -28,8 +28,7 @@ class PollController < ApplicationController
         least_popular_response_count = 9999999  # an arbitrarily high number
 
         answer_data = {}
-        answers.each 
-        do |answer|
+        answers.each do |answer|
             total_responses = total_responses + answer.count
 
             answer_data[answer.item] = answer.count 
@@ -61,8 +60,7 @@ class PollController < ApplicationController
     
     def do_extra_work 
         puts "Begin do extra work"
-        (1..1000).each 
-        do |n|
+        (1..1000).each do |n|
             if is_prime(n)
                 puts "#{n} is a prime number"
             end 
