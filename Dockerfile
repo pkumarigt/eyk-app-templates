@@ -36,7 +36,6 @@ ARG db_yml_host
 RUN erb -T - ./.eyk/config/sidekiq.yml.erb > config/sidekiq.yml
 
 # Make the migration script runable
-RUN chmod +x ./.eyk/sparkplug.sh
 RUN chmod +x ./.eyk/migrations/db-migrate.sh
 
 # Precompile Rails assets
