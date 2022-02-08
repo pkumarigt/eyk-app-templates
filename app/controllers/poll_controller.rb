@@ -72,7 +72,7 @@ class PollController < ApplicationController
         #    x.hello?
         #    rescue => e
         #   Rollbar.error(e)
-        end
+        #end
     end
 
     def is_prime(num)
