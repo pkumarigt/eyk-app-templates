@@ -3,7 +3,6 @@ require 'rollbar'
 Rollbar.configure do |config|
 #  config.access_token = 'ccc6e79e105e4eccb4a346d00667c0a8'
   config.access_token = ENV["ROLLBAR_ACCESS_TOKEN"]
-
 end
 
 class PollController < ApplicationController
@@ -67,16 +66,14 @@ class PollController < ApplicationController
         end
         puts "Complete do extra work"
         
-        #Rollbar.info("EYK connecting to Rollbar")
+        #Rollbar.info("EYK connecting to Rollbar: Doing extra work")
         #begin
         #    x = nil
         #    x.hello?
-        #  rescue => e
-        #    Rollbar.error(e)
-        #end
-
+        #    rescue => e
+        #   Rollbar.error(e)
+        end
     end
-
 
     def is_prime(num)
         (2..(num - 1)).each do |n|
