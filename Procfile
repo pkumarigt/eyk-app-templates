@@ -1,5 +1,4 @@
 # Uncomment any of the lines below to enable that process type for your app.
-
 web: bundle exec rails server -b 0.0.0.0 -p 5000
 #web: ./.eyk/sparkplug.sh && bundle exec rails server -b 0.0.0.0 -p 5000
 #migration: ./.eyk/migrations/db-migrate.sh
