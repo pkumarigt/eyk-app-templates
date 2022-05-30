@@ -1,5 +1,3 @@
-# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
-
 image:
   file: .gitpod.Dockerfile
 
@@ -13,16 +11,16 @@ ports:
 
 tasks:
   - init: >
-      echo 'init script' # runs during prebuild
-   
-      mkdir /home/gitpod/.eyk && cp /workspace/resources/client.json /home/gitpod/.eyk &&
-      cp  /workspace/resources/id_rsa /home/gitpod/.ssh/
-     
       bundle install &&
       yarn install &&
       rake db:create
     command: >
       rails server -b 0.0.0.0
+
 vscode:
   extensions:
     - rebornix.ruby
+
+#mkdir /home/gitpod/.eyk && cp /workspace/resources/client.json /home/gitpod/.eyk &&
+#cp  /workspace/resources/id_rsa /home/gitpod/.ssh/
+      
