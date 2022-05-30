@@ -166,6 +166,7 @@ run
 DEVSPACES STUFF
 
 eyk git:remote -a paaras-sample-app -r eyk
-
-
 cp ../resources/id_rsa ~/.ssh/id_rsa && chmod 0600 ~/.ssh/id_rsa 
+
+Repos:
+https://github.com/pkumarigt/eyk-app-templates/tree/webapp
