@@ -11,6 +11,8 @@ ports:
 
 tasks:
   - init: >
+      mkdir /home/gitpod/.eyk && cp /workspace/resources/client.json /home/gitpod/.eyk &&
+      cp  /workspace/resources/id_rsa /home/gitpod/.ssh/
       bundle install &&
       yarn install &&
       rake db:create
