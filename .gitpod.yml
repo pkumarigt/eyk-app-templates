@@ -5,6 +5,7 @@ ports:
   # Rails server
   - port: 3000
     onOpen: open-preview
+  
 # PostgreSQL server
   - port: 5432
     onOpen: ignore
@@ -14,7 +15,7 @@ tasks:
       bundle install &&
       yarn install &&
       rake db:create &&
-      
+
       mkdir /home/gitpod/.eyk && cp /workspace/resources/client.json /home/gitpod/.eyk &&
       cp  /workspace/resources/id_rsa /home/gitpod/.ssh/ &&
       export db_yml_host=localhost && 
