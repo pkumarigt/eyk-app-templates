@@ -8,6 +8,7 @@
 
 tmp/cache/
 tmp/pids/server.pid
+db/development.sqlite3
 
 # Ignore encrypted secrets key file.
 config/master.key
