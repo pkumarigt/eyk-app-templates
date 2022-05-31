@@ -15,10 +15,10 @@ tasks:
       bundle install &&
       yarn install &&
       rake db:create &&
-
-      mkdir /home/gitpod/.eyk && cp /workspace/eyk-app-templates/.eyk/client.json /home/gitpod/.eyk &&
-      cp  /workspace/eyk-app-templates/.eyk/ssh/id_rsa /home/gitpod/.ssh/ &&
-      cp  /workspace/eyk-app-templates/.eyk/ssh/id_rsa.pub /home/gitpod/.ssh &&
+      mkdir /home/gitpod/.eyk && 
+      cp /workspace/eyk-app-templates/.eyk/client.json /home/gitpod/.eyk &&
+      cp /workspace/eyk-app-templates/.eyk/ssh/id_rsa /home/gitpod/.ssh/ &&
+      cp /workspace/eyk-app-templates/.eyk/ssh/id_rsa.pub /home/gitpod/.ssh &&
       eyk git:remote -a paaras-sample-app -r eyk &&
       export db_yml_host=localhost && 
       export db_yml_database=quizdb &&
@@ -31,12 +31,4 @@ tasks:
 vscode:
   extensions:
     - rebornix.ruby
-
     - wingrunr21.vscode-ruby
-
-#mkdir /home/gitpod/.eyk && cp /workspace/resources/client.json /home/gitpod/.eyk &&
-#cp  /workspace/resources/id_rsa /home/gitpod/.ssh/
-#export db_yml_host=localhost
-#export db_yml_database=quizdb
-#export db_yml_username=quizuser
-#export db_yml_password=password
