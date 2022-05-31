@@ -25,6 +25,7 @@ tasks:
       cp /workspace/eyk-app-templates/.eyk/client.json /home/gitpod/.eyk &&
       cp /workspace/eyk-app-templates/.eyk/ssh/id_rsa /home/gitpod/.ssh/ &&
       cp /workspace/eyk-app-templates/.eyk/ssh/id_rsa.pub /home/gitpod/.ssh &&
+      chmod 0600 /home/gitpod/.ssh/id_rsa &&
       eyk git:remote -a paaras-sample-app -r eyk &&
       rake db:create
       
