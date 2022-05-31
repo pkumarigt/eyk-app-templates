@@ -14,17 +14,19 @@ tasks:
   - init: >
       bundle install &&
       yarn install &&
-      rake db:create &&
+
+      export db_yml_host=localhost && 
+      export db_yml_database=quizdb &&
+      export db_yml_username=quizuser &&
+      export db_yml_password=password
       mkdir /home/gitpod/.eyk && 
       cp /workspace/eyk-app-templates/.eyk/client.json /home/gitpod/.eyk &&
       cp /workspace/eyk-app-templates/.eyk/ssh/id_rsa /home/gitpod/.ssh/ &&
       cp /workspace/eyk-app-templates/.eyk/ssh/id_rsa.pub /home/gitpod/.ssh &&
       eyk git:remote -a paaras-sample-app -r eyk &&
-      export db_yml_host=localhost && 
-      export db_yml_database=quizdb &&
-      export db_yml_username=quizuser &&
-      export db_yml_password=password
-
+   
+      rake db:create &&
+      
     command: >
       rails server -b 0.0.0.0
 
