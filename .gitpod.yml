@@ -15,6 +15,7 @@ tasks:
       bundle install &&
       yarn install &&
 
+      export RAIL_ENV=development &&
       export db_yml_host=localhost && 
       export db_yml_database=quizdb &&
       export db_yml_username=quizuser &&
