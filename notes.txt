@@ -1,7 +1,5 @@
 EYK SECTION
 ----------------
-
-
 eyk apps:run 'bundle exec rails db:migrate' -a onside-umbrella
 eyk apps:run 'bundle exec rails db:seed' -a onside-umbrella
 eyk limits:set --cpu web=100m/1000m -a onside-umbrella
@@ -72,7 +70,6 @@ RUN apt-get --allow-releaseinfo-change update && apt-get install -y imagemagick 
 
 SCALEARC SECTION
 ----------------
-
 AAG
 java -jar Java_Client.jar AAG 1433 sa admin@123 AdventureWorks2019 0 5 0 batch /opt/scalearc/lg/mssql/conf/java_client/AdventureWorks2019/sp_read_write.sql 1 100 RW 6000 0
 
@@ -164,7 +161,6 @@ run
   
 
 DEVSPACES STUFF
-
 eyk git:remote -a paaras-sample-app -r eyk
 cp ../resources/id_rsa ~/.ssh/id_rsa && chmod 0600 ~/.ssh/id_rsa 
 
