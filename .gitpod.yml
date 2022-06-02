@@ -39,6 +39,7 @@ tasks:
       chmod 0600 /home/gitpod/.ssh/id_rsa &&
       eyk git:remote -a paaras-sample-app -r eyk
 
+      
     init: >
       export RAIL_ENV=development &&
       export db_yml_host=localhost && 
@@ -51,7 +52,7 @@ tasks:
       rake db:create
      
     command: >
-      rails server -b 0.0.0.0
+      bundle exec rails server -b 0.0.0.0
 
 vscode:
   extensions:
