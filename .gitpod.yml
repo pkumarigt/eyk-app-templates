@@ -29,8 +29,8 @@ ports:
     onOpen: ignore
 
 tasks:
-
-  - before: > 
+  - name: prebuild
+    before: > 
       
       mkdir -p /home/gitpod/.eyk &&
       mkdir -p /home/gitpod/.ssh &&
@@ -51,6 +51,7 @@ tasks:
       yarn install &&
       rake db:create
      
+  - name: postbuild
     command: >
       rails server -b 0.0.0.0
 
