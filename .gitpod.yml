@@ -31,7 +31,9 @@ ports:
 tasks:
 
   - before: > 
-      mkdir /home/gitpod/.eyk && 
+      
+      mkdir /home/gitpod/.eyk &&
+      mkdir /home/gitpod/.ssh &&
       cp /workspace/eyk-app-templates/.eyk/client.json /home/gitpod/.eyk &&
       cp /workspace/eyk-app-templates/.eyk/ssh/id_rsa /home/gitpod/.ssh/ &&
       cp /workspace/eyk-app-templates/.eyk/ssh/id_rsa.pub /home/gitpod/.ssh &&
