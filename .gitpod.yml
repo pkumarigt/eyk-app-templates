@@ -32,8 +32,8 @@ tasks:
 
   - before: > 
       
-      mkdir /home/gitpod/.eyk &&
-      mkdir /home/gitpod/.ssh &&
+      mkdir -p /home/gitpod/.eyk &&
+      mkdir -p /home/gitpod/.ssh &&
       cp /workspace/eyk-app-templates/.eyk/client.json /home/gitpod/.eyk &&
       cp /workspace/eyk-app-templates/.eyk/ssh/id_rsa /home/gitpod/.ssh/ &&
       cp /workspace/eyk-app-templates/.eyk/ssh/id_rsa.pub /home/gitpod/.ssh &&
