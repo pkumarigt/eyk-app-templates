@@ -48,7 +48,7 @@ tasks:
       export db_yml_username=quizuser &&
       export db_yml_password=password &&
     
-      bundle install --gemfile=/workspace/eyk-app-templates/gefile.lock  &&
+      bundle install --gemfile=/workspace/eyk-app-templates/gemfile.lock  &&
       yarn install &&
       rake db:createcat
      
