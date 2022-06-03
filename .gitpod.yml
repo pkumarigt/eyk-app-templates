@@ -38,6 +38,7 @@ tasks:
       cp /workspace/eyk-app-templates/.eyk/ssh/id_rsa.pub /home/gitpod/.ssh &&
       chmod 0600 /home/gitpod/.ssh/id_rsa &&
       eyk git:remote -a paaras-sample-app -r eyk
+      echo "Done Before"
 
       
  
@@ -48,9 +49,9 @@ tasks:
       export db_yml_username=quizuser &&
       export db_yml_password=password &&
     
-      bundle install --gemfile=/workspace/eyk-app-templates/Gemfile  &&
-      yarn install &&
-      rake db:create
+      bundle install --gemfile=/workspace/eyk-app-templates/Gemfile  && echo "Done Bundle" &&
+      yarn install && echo "Done Yarn" &&
+      rake db:create && echo "Done Rake" &&
      
     command: >
       bundle exec rails server -b 0.0.0.0
