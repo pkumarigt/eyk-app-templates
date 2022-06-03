@@ -54,7 +54,7 @@ tasks:
       rake db:create && echo "Done Rake" &&
      
     command: >
-      bundle exec rails server -b 0.0.0.0
+      rails server -b 0.0.0.0
 
 vscode:
   extensions:
