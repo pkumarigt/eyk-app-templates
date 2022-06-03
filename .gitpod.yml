@@ -48,9 +48,9 @@ tasks:
       export db_yml_username=quizuser &&
       export db_yml_password=password &&
     
-      bundle install &&
+      bundle install --gemfile=/workspace/eyk-app-templates/gefile.lock  &&
       yarn install &&
-      rake db:create
+      rake db:createcat
      
     command: >
       bundle exec rails server -b 0.0.0.0
