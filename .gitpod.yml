@@ -51,7 +51,7 @@ tasks:
     
       bundle install --gemfile=/workspace/eyk-app-templates/Gemfile  && echo "Done Bundle" &&
       yarn install && echo "Done Yarn" &&
-      rake db:create && echo "Done Rake" &&
+      rake db:create && echo "Done Rake"
      
     command: >
       rails server -b 0.0.0.0
