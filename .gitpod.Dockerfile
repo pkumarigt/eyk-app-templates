@@ -1,4 +1,4 @@
-FROM gitpod/workspace-postgres
+FROM devfactory/workspace-full
 USER gitpod
 
 RUN _ruby_version=ruby-2.7.3 \
