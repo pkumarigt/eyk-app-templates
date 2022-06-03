@@ -43,6 +43,7 @@ tasks:
       
  
     init: >
+      echo "Starting Ininit"
       export RAIL_ENV=development &&
       export db_yml_host=localhost && 
       export db_yml_database=quizdb &&
@@ -54,7 +55,9 @@ tasks:
       rake db:create && echo "Done Rake"
      
     command: >
-      rails server -b 0.0.0.0
+      printf "starting command in following director " && bash -lc "pwd" &&
+      rails server -b 0.0.0.0 &&
+      echo "comleted command"
 
 vscode:
   extensions:
