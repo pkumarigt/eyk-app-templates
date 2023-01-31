@@ -66,6 +66,34 @@ kubectl get pods -o wide
 imgagemagic issue.
 RUN apt-get --allow-releaseinfo-change update && apt-get install -y imagemagick libsqlite3-dev
 
+Kibana Cleanup
+------------------
+
+GET _cat/allocation?v
+GET _cat/indices/?s=store.size:desc
+
+GET _cat/indices/?s=store.size:desc
+DELETE /ky_logs-*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 SCALEARC SECTION
